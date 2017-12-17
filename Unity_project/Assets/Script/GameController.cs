@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
 
     public float SpawnDelay = 10.0f;
     public float SpawnAcceleration = 0.5f;
+    public float MaxSpawnRate = 0.5f;
+    public float EnemyStartHealth = 15.0f;
 
     public List<Transform> SpawnPoints;
 
@@ -59,11 +61,19 @@ public class GameController : MonoBehaviour
         {
             foreach (Transform point in SpawnPoints)
             {
-                Instantiate(EnemyPrefabs[0], point.position, Quaternion.identity);
+                //TODO: List of enemies, later in game spawn stronger ones
+                var enemy = Instantiate(EnemyPrefabs[0], point.position, Quaternion.identity);
+                
+                //Increase shot rate, will be replaced
+                enemy.GetComponent<PrimaryWeaponManager>()._shotDelay = SpawnDelay / 4.0f;
+
+                //Increase health
+                enemy.GetComponent<HealthManager>()._maxHealth = EnemyStartHealth * (20.0f/SpawnDelay);
             }
 
             yield return new WaitForSeconds(SpawnDelay);
-            if (SpawnDelay * SpawnAcceleration > 1.0)
+
+            if (SpawnDelay * SpawnAcceleration > MaxSpawnRate)
             {
                 SpawnDelay *= SpawnAcceleration;
             }
