@@ -186,6 +186,7 @@ MonoBehaviour:
     type: 2}
   _hitReward: {fileID: 1692925095451258, guid: f42fe4d8d95becc40ade503fa4a76a90, type: 2}
   RewardSpawnerTransform: {fileID: 400168}
+  UpgradeSpawnProbability: 1
   _hitMaterial: {fileID: 2100000, guid: 779127e142a57f0409ff23e9563aaaf7, type: 2}
   _hitDuration: 0.1
   _currentHealth: 0

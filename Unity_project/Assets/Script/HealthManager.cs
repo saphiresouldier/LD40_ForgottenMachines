@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour, IDamageable<float> , IKillable {
     public GameObject _explosionPrefab;
     public GameObject _hitReward;
     public Transform RewardSpawnerTransform;
-    public GameObject PickUpToSpawn;
+    public float UpgradeSpawnProbability = 0.0f;
 
     public Material _hitMaterial;
     public float _hitDuration = 0.1f;
@@ -121,8 +121,12 @@ public class HealthManager : MonoBehaviour, IDamageable<float> , IKillable {
         //spawn explosion
         //Instantiate(_explosionPrefab, transform.position, Quaternion.Euler(45, 0, 0));
         _explosionPrefab.Spawn(transform.position, Quaternion.Euler(45, 0, 0));
-        //spawn pickup
-        Instantiate(GameController.Instance.GetRandomPickUp(), new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
+
+        if (Random.Range(0.0f, 1.0f) < UpgradeSpawnProbability)
+        {
+            //spawn pickup
+            Instantiate(GameController.Instance.GetRandomPickUp(), new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
+        }
 
         Destroy(_healthSlider.gameObject);
         Destroy(gameObject);

@@ -244,6 +244,8 @@ MonoBehaviour:
   - {fileID: 1072638150977124, guid: ed652c3d3d40d6948b0597f1d4ace0f8, type: 2}
   SpawnDelay: 20
   SpawnAcceleration: 0.9
+  MaxSpawnRate: 0.5
+  EnemyStartHealth: 15
   SpawnPoints:
   - {fileID: 1933178601}
   - {fileID: 785757277}
@@ -1589,13 +1591,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96049f6daef2a4bac8f2c95bfc6a5b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startupPoolMode: 0
+  startupPoolMode: 1
   startupPools:
-  - size: 20
+  - size: 40
     prefab: {fileID: 1974831892062874, guid: 8d7a586947b05e64fa9e5ca49db42cb4, type: 2}
   - size: 25
     prefab: {fileID: 0}
-  - size: 5
+  - size: 2
     prefab: {fileID: 1133119912533274, guid: b5c4540a12b82524388b521c5e9dc5d8, type: 2}
   - size: 25
     prefab: {fileID: 1081732338697904, guid: 19879177356926d418fb2b4b5f67ba03, type: 2}
@@ -1634,7 +1636,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1462297481}
-  m_LocalRotation: {x: -0.2705981, y: -0.65328157, z: -0.6532813, w: 0.27059826}
+  m_LocalRotation: {x: -0.27059814, y: -0.6532816, z: -0.65328133, w: 0.2705983}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
