@@ -11,6 +11,8 @@ public class PickUpEffect : MonoBehaviour {
     public bool WeaponPickUpShotDelay = false;
     public bool WeaponPickUpSpreadAmount = false;
 
+    public GameObject PickUpText;
+
     private GameObject Player;
     private PrimaryWeaponManager PlayerWeaponManager;
     private HealthManager PlayerHealthManager;
@@ -51,6 +53,10 @@ public class PickUpEffect : MonoBehaviour {
             {
                 PlayerWeaponManager._spreadAmount += Amount;
             }
+        }
+        if (PickUpText)
+        {
+            Instantiate(PickUpText, transform.position, Quaternion.identity);
         }
     }
 }

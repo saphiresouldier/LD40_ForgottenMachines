@@ -208,6 +208,7 @@ MonoBehaviour:
   WeaponPickUpBulletAmount: 0
   WeaponPickUpShotDelay: 0
   WeaponPickUpSpreadAmount: 1
+  PickUpText: {fileID: 1236336177935850, guid: 1511b3d65a6242841b7ab69658ec0e43, type: 2}
 --- !u!114 &114832646882371258
 MonoBehaviour:
   m_ObjectHideFlags: 1
